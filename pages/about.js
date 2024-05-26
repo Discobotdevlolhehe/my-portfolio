@@ -6,7 +6,7 @@ export default function About() {
     <Layout>
       <div className="text-center mt-16">
         <h2 className="text-4xl">
-          <Typing text={["Hello, I'm Unknown Leaf"]} speed={100} eraseSpeed={50} />
+          <Typing text={["Hello, I&apos;m Unknown Leaf"]} speed={100} eraseSpeed={50} />
         </h2>
         <div className="mt-8 max-w-3xl mx-auto p-4 bg-gray-800 rounded-lg shadow-lg">
           <h3 className="text-2xl mb-4">About Me</h3>
