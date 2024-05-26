@@ -27,13 +27,13 @@ export default function Home() {
         </motion.div>
         <h1 className="text-5xl mb-4">Welcome to My Portfolio</h1>
         <p className="text-xl mb-8">
-          Hi there! I&apos;m Unknown Leaf, a passionate web developer specializing in creating dynamic and responsive web applications.
+          Hi there! I am Unknown Leaf, a passionate web developer specializing in creating dynamic and responsive web applications.
           Explore my projects, learn more about my skills, and feel free to get in touch!
         </p>
         <div className="mt-8 max-w-3xl mx-auto p-4 bg-gray-800 rounded-lg shadow-lg">
           <h2 className="text-2xl mb-4">About This Portfolio</h2>
           <p className="mb-4">
-            This portfolio showcases some of the projects I&apos;ve worked on, demonstrating my skills in web development using modern technologies like  HTML, CSS, JS, node.js and Express.
+            This portfolio showcases some of the projects I have worked on, demonstrating my skills in web development using modern technologies like  HTML, CSS, JS, node.js and Express.
             Each project highlights different aspects of my expertise, from front-end design to back-end development.
           </p>
           <p className="mb-4">
