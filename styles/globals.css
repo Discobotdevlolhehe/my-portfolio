@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white;
+}
+
+.header-link {
+  position: relative;
+  color: white;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.header-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.header-link:hover::after {
+  width: 100%;
+}
+
+.header-link:hover {
+  color: white;
+}
