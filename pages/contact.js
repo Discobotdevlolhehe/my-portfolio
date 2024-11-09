@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaGoogle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 export default function Contact() {
@@ -43,7 +43,7 @@ const backgroundColor = submitted ? 'bg-white' : 'bg-gray-100';
     <Layout>
       <div className="bg-gradient-to-r from-blue-500 to-purple-500 min-h-screen flex flex-col items-center justify-center p-4">
         <motion.h2
-          className="text-4xl text-white text-center mt-8"
+          className="text-4xl text-white text-center mt-16"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -57,6 +57,7 @@ const backgroundColor = submitted ? 'bg-white' : 'bg-gray-100';
           transition={{ duration: 1, delay: 0.5 }}
         >
           <p>
+            <FaGoogle className="inline-block mr-2" />
             Work Email:{' '}
             <Link legacyBehavior href="mailto:tongko225@gmail.com">
               <a className="text-gray-300">tongko225@gmail.com</a>
@@ -65,14 +66,14 @@ const backgroundColor = submitted ? 'bg-white' : 'bg-gray-100';
           <p>
             <FaGithub className="inline-block mr-2" />
             GitHub:{' '}
-            <Link legacyBehavior href="https://github.com/yourgithub">
+            <Link legacyBehavior href="https://github.com/Discobotdevlolhehe">
               <a className="text-gray-300">github.com/Discobotdevlolhehe</a>
             </Link>
           </p>
           <p>
             <FaInstagram className="inline-block mr-2" />
             Instagram:{' '}
-            <Link legacyBehavior href="https://instagram.com/yourinstagram">
+            <Link legacyBehavior href="https://instagram.com/wandering._entity">
               <a className="text-gray-300">instagram.com/wandering._entity</a>
             </Link>
           </p>
@@ -105,7 +106,7 @@ const backgroundColor = submitted ? 'bg-white' : 'bg-gray-100';
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className={`w-full p-2 border border-gray-300 rounded ${textColor}`}
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -116,7 +117,8 @@ const backgroundColor = submitted ? 'bg-white' : 'bg-gray-100';
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full p-2 border border-gray-300 rounded"
+                  rows="4"
+                  className={`w-full p-2 border border-gray-300 rounded ${textColor}`}
                   value={formData.email}
                   onChange={handleChange}
                 />

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
+import { useState, useEffect } from 'react';
 
 const waveVariants = {
   initial: { rotate: 0 },
@@ -14,6 +15,21 @@ const waveVariants = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    const bgContainer = document.getElementById('bg-container');
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.body.style.setProperty('--mouse-x', `${x}%`);
+      document.body.style.setProperty('--mouse-y', `${y}%`);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center min-h-screen text-center mt-8">
@@ -38,7 +54,7 @@ export default function Home() {
           </p>
           <p className="mb-4">
             I believe in continuous learning and improvement. Whether it&apos;s mastering a new framework or refining my existing skills, I&apos;m always eager to take on new challenges.
-            Feel free to browse through my projects, check out my blog for the latest updates, and connect with me on social media.
+            Feel free to browse through my projects, and connect with me on social media.
           </p>
         </div>
       </div>

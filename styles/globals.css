@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+html,
+
 body {
   @apply bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .header-link {
@@ -31,4 +44,73 @@ body {
 
 .header-link:hover {
   color: white;
+}
+
+.math-background {
+  background: url('/math-symbols.png'); /* Ensure this image is in your public folder */
+  background-size: cover;
+  background-position: var(--mouse-x) var(--mouse-y);
+  transition: background-position 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+
+.math-background:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/math-symbols.png'); /* Ensure this image is in your public folder */
+  background-size: cover;
+  background-position: var(--mouse-x) var(--mouse-y);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+#bg-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  color: white;
+}
+
+#bg-container::before,
+#bg-container::after {
+  content: '∑ ∫ ∆ √ π ∂ ∇ ∞ ∫ ≈ ≠ ≤ ≥';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 2rem;
+  line-height: 4rem;
+  white-space: pre;
+  overflow: hidden;
+}
+
+#bg-container::after {
+  content: '∑ ∫ ∆ √ π ∂ ∇ ∞ ∫ ≈ ≠ ≤ ≥';
+  font-size: 1.5rem;
+  line-height: 3rem;
+  opacity: 0.2;
+}
+
+#bg-container .bg-text {
+  font-size: 5rem;
+  line-height: 7rem;
+  animation: moveBg 20s linear infinite;
+}
+
+@keyframes moveBg {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, -100%);
+  }
 }
